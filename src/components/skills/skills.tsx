@@ -1,5 +1,3 @@
-import "./skills.css";
-
 export type SkillCategory =
   | "Core"
   | "Framework"
