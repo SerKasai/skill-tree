@@ -59,16 +59,36 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
     >
       <GlassMorphCard>
         <ul className="p-2.5 select-none">
-          <li className="info">
+          <li className="info text-start">
             <ul>
-              <li className="p-5">
+              <li className="p-5 text-center">
                 Categoria: <br /> {cachedSkill.category}
               </li>
               <li className="p-5">
                 Descrizione: <br /> {cachedSkill.description}
               </li>
               <li className="p-5">
-                Certificazioni ottenute: <br /> {cachedSkill.certifications}
+                Certificazioni ottenute:
+                <ul className="mt-2 space-y-1">
+                  {cachedSkill.certifications &&
+                  Array.isArray(cachedSkill.certifications) ? (
+                    cachedSkill.certifications.map(
+                      (cert: string, index: number) => (
+                        <li
+                          key={index}
+                          className="flex items-start gap-2 text-sm"
+                        >
+                          <span className="text-purple-300">•</span>
+                          <span>{cert}</span>
+                        </li>
+                      ),
+                    )
+                  ) : (
+                    <li className="text-sm italic opacity-50 text-gray-300">
+                      Nessuna certificazione specifica registrata
+                    </li>
+                  )}
+                </ul>
               </li>
             </ul>
           </li>

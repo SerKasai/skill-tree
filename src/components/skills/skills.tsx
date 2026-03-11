@@ -1,3 +1,5 @@
+import { Icon } from "@iconify-icon/react";
+
 export type SkillCategory =
   | "Core"
   | "Framework"
@@ -8,6 +10,8 @@ export type SkillCategory =
 export interface Skill {
   id: string;
   name: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  icon?: any;
   category: SkillCategory;
   description: string;
   dependencies: string[];
@@ -24,6 +28,14 @@ export const arraySkill: Skill[] = [
   {
     id: "javascript",
     name: "Javascript",
+    icon: (
+      <Icon
+        icon="fa7-brands:node-js"
+        width="50"
+        height="50"
+        style={{ color: "#F7CF00" }}
+      />
+    ),
     category: "Core",
     description:
       "Il linguaggio fondamentale per il web. Lo utilizzo per gestire la logica complessa delle interfacce.",
@@ -40,6 +52,14 @@ export const arraySkill: Skill[] = [
   {
     id: "typescript",
     name: "Typescript",
+    icon: (
+      <Icon
+        icon="cib:typescript"
+        width="50"
+        height="50"
+        style={{ color: "#377CC8" }}
+      />
+    ),
     category: "Core",
     description:
       "Aggiunge tipizzazione statica a JavaScript, migliorando la manutenibilità e riducendo i bug.",
@@ -51,6 +71,14 @@ export const arraySkill: Skill[] = [
   {
     id: "react",
     name: "React",
+    icon: (
+      <Icon
+        icon="cib:react"
+        width="50"
+        height="50"
+        style={{ color: "#66DBFB" }}
+      />
+    ),
     category: "Framework",
     description:
       "Libreria principale per la creazione di interfacce utente dinamiche e single-page applications.",
@@ -80,6 +108,14 @@ export const arraySkill: Skill[] = [
   {
     id: "vue",
     name: "Vue.js",
+    icon: (
+      <Icon
+        icon="cib:vue-js"
+        width="50"
+        height="50"
+        style={{ color: "#84C987" }}
+      />
+    ),
     category: "Framework",
     description:
       "Framework progressivo utilizzato per costruire interfacce utente fluide.",
@@ -97,6 +133,7 @@ export const arraySkill: Skill[] = [
   {
     id: "liferay",
     name: "Liferay",
+    icon: <img src="/src/assets/icon_liferay.png" alt="icon_liferay" />,
     category: "Tool",
     description:
       "Utilizzo intermedio per la gestione di temi, client extensions e interfacce personalizzate, acquisito durante l'esperienza lavorativa in Next Mind.",

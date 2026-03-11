@@ -19,7 +19,7 @@ const glowColors = {
 const GlassMorphCard = React.forwardRef<HTMLDivElement, GlassMorphCardProps>(
   (
     {
-      className,
+      className = " border-[20px] border-[#00e7ff]",
       children,
       intensity = 15,
       glowColor = "purple",
@@ -71,7 +71,7 @@ const GlassMorphCard = React.forwardRef<HTMLDivElement, GlassMorphCardProps>(
     return (
       <div
         ref={ref}
-        className={cn("relative", className)}
+        className={cn("relative")}
         style={{ perspective: "1000px" }}
         {...props}
       >
@@ -81,6 +81,7 @@ const GlassMorphCard = React.forwardRef<HTMLDivElement, GlassMorphCardProps>(
             "absolute -inset-2 rounded-2xl bg-linear-to-r blur-xl transition-opacity duration-300",
             glowColors[glowColor],
             isHovered ? "opacity-80" : "opacity-40",
+            className,
           )}
         />
 
