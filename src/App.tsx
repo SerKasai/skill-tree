@@ -26,14 +26,14 @@ function App() {
     <BubbleBackground>
       <div className="app-container w-screen min-h-screen drop-shadow-2xl">
         <div className="flex flex-col items-center justify-center p-10">
-          <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_3px_#00e7ff] text-8xl">
+          <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_3px_#00e7ff] text-4xl md:text-8xl">
             IL MIO SKILL TREE
           </h2>
         </div>
         {/* 4. LAYOUT A GRIGLIA: L'uso di grid-cols-2 è la scelta architettonica chiave qui.
             Previene i "layout shift" (i fastidiosi salti dell'interfaccia) perché forza 
             le due colonne ad occupare esattamente il 50% ciascuna, indipendentemente dal contenuto. */}
-        <div className="skills-container grid grid-cols-2 bg-[#00000038] w-6/12 min-w-[750px] place-self-center justify-center items-center border-4 border-black border-double rounded-[50px]">
+        <div className="skills-container flex md:grid flex-col-reverse md:grid-cols-2 bg-[#00000038] w-[360px] md:min-w-[750px] place-self-center justify-center items-center border-4 border-black border-double rounded-[50px]">
           <ul className="p-5 flex flex-col gap-y-5 h-full justify-center">
             {/* 5. METODO MAP: Perfetto l'utilizzo per renderizzare array dinamici */}
             {arraySkill.map((skill) => {
@@ -56,7 +56,7 @@ function App() {
                         : "text-gray-400 opacity-60 hover:opacity-100 hover:scale-105"
                     }`}
                 >
-                  <div className="skill-name gap-x-1.5 flex items-center">
+                  <div className="skill-name flex-col-reverse md:flex-row gap-x-1.5 flex items-center">
                     <TextShimmer className="text-3xl">{skill.name}</TextShimmer>
                     {/* Renderizza l'icona salvata nei dati */}
                     {skill.icon}

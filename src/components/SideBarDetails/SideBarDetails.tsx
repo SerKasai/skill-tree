@@ -41,13 +41,41 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
     }
   };
 
+  // track media query so icon updates when viewport crosses the breakpoint
+  const [isMd, setIsMd] = useState(
+    () =>
+      typeof window !== "undefined" &&
+      window.matchMedia("(min-width: 768px)").matches,
+  );
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+    const mql = window.matchMedia("(min-width: 768px)");
+    const handler = (e: MediaQueryListEvent) => setIsMd(e.matches);
+    // modern browsers support addEventListener, but fallback to addListener for older ones
+    if (mql.addEventListener) {
+      mql.addEventListener("change", handler);
+    } else {
+      // @ts-ignore
+      mql.addListener(handler);
+    }
+    return () => {
+      if (mql.removeEventListener) {
+        mql.removeEventListener("change", handler);
+      } else {
+        // @ts-ignore
+        mql.removeListener(handler);
+      }
+    };
+  }, []);
+
   // 4. RENDERING CONDIZIONALE (Stato Vuoto)
   if (!cachedSkill) {
     return (
-      <div className="text-white text-center opacity-70 italic font-light animate__animated animate__fadeIn flex items-center gap-2">
+      <div className="text-white text-center opacity-70 italic font-light animate__animated animate__fadeIn flex flex-col-reverse md:flex-row items-center gap-2">
         <Icon
           className="animate__animated animate__infinite animate__pulse"
-          icon="line-md:arrow-small-left"
+          icon={isMd ? "line-md:arrow-small-left" : "line-md:arrow-small-down"}
           width="24"
           height="24"
         />
@@ -56,10 +84,14 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
     );
   }
 
-  // Scegliamo la classe in base allo stato di uscita
+  // Scegliamo la classe in base allo stato di uscita e al breakpoint
   const animationClass = isExiting
-    ? "animate__fadeOutLeft"
-    : "animate__fadeInLeft";
+    ? isMd
+      ? "animate__fadeOutLeft"
+      : "animate__fadeOutUp"
+    : isMd
+      ? "animate__fadeInLeft"
+      : "animate__fadeInDown";
 
   return (
     <div
