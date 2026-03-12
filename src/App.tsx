@@ -3,7 +3,6 @@ import "./App.css";
 import "tailwindcss";
 import { arraySkill } from "./components/Skills/skills";
 import { BubbleBackground } from "./components/animate-ui/components/backgrounds/bubble";
-import GifText from "./components/gif-text";
 import { TextShimmer } from "./components/text-shimmer";
 import { SideBarDetails } from "./components/SideBarDetails/SideBarDetails";
 
@@ -25,13 +24,16 @@ function App() {
   // il Fragment esterno era ridondante e l'ho rimosso per tenere il DOM più pulito.
   return (
     <BubbleBackground>
-      <div className="app-container w-screen min-h-screen drop-shadow-2xl content-center">
-        <GifText />
-
+      <div className="app-container w-screen min-h-screen drop-shadow-2xl">
+        <div className="flex flex-col items-center justify-center p-10">
+          <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_3px_#00e7ff] text-8xl">
+            IL MIO SKILL TREE
+          </h2>
+        </div>
         {/* 4. LAYOUT A GRIGLIA: L'uso di grid-cols-2 è la scelta architettonica chiave qui.
             Previene i "layout shift" (i fastidiosi salti dell'interfaccia) perché forza 
             le due colonne ad occupare esattamente il 50% ciascuna, indipendentemente dal contenuto. */}
-        <div className="skills-container grid grid-cols-2 bg-[#00000038] w-6/12 min-w-[750px] h-[560px] place-self-center justify-center items-center border-4 border-black border-double rounded-[50px]">
+        <div className="skills-container grid grid-cols-2 bg-[#00000038] w-6/12 min-w-[750px] place-self-center justify-center items-center border-4 border-black border-double rounded-[50px]">
           <ul className="p-5 flex flex-col gap-y-5 h-full justify-center">
             {/* 5. METODO MAP: Perfetto l'utilizzo per renderizzare array dinamici */}
             {arraySkill.map((skill) => {
