@@ -152,7 +152,7 @@ export const arraySkill: Skill[] = [
     // 5. ASSETS PATH: Assicurati che il percorso parta da / pubblico o sia importato correttamente.
     icon: (
       <img
-        src="/src/assets/icon_liferay.png"
+        src="/public/icon_liferay.png"
         alt="Liferay Logo"
         className="w-[50px] h-[50px] object-contain"
       />
