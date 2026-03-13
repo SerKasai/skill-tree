@@ -20,7 +20,8 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
   useEffect(() => {
     if (activeSkillId) {
       // Se viene selezionata una nuova skill:
-      const newSkill = arraySkill.find((s) => s.id === activeSkillId) || null;
+      const newSkill =
+        arraySkill.find((s: Skill) => s.id === activeSkillId) || null;
       // eslint-disable-next-line react-hooks/set-state-in-effect
       setCachedSkill(newSkill);
       setIsExiting(false);
@@ -131,15 +132,17 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
               {cachedSkill.certifications &&
               Array.isArray(cachedSkill.certifications) &&
               cachedSkill.certifications.length > 0 ? (
-                cachedSkill.certifications.map((cert, index) => (
-                  <li
-                    key={index}
-                    className="flex items-start gap-2 text-sm bg-white/5 p-2 rounded-lg border border-white/5"
-                  >
-                    <span className="text-cyan-400">•</span>
-                    <span>{cert}</span>
-                  </li>
-                ))
+                cachedSkill.certifications.map(
+                  (cert: string, index: number) => (
+                    <li
+                      key={index}
+                      className="flex items-start gap-2 text-sm bg-white/5 p-2 rounded-lg border border-white/5"
+                    >
+                      <span className="text-cyan-400">•</span>
+                      <span>{cert}</span>
+                    </li>
+                  ),
+                )
               ) : (
                 <li className="text-sm italic opacity-50 text-gray-400">
                   Nessuna certificazione specifica registrata
