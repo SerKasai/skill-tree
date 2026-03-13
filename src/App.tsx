@@ -27,7 +27,7 @@ function App() {
       <div className="app-container w-screen min-h-screen drop-shadow-2xl">
         <div className="flex flex-col items-center justify-center p-10">
           <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_3px_#00e7ff] text-4xl md:text-8xl">
-            IL MIO SKILL TREE
+            SERGIO IGNIZIO <hr /> MY SKILLS
           </h2>
         </div>
         {/* 4. LAYOUT A GRIGLIA: L'uso di grid-cols-2 è la scelta architettonica chiave qui.

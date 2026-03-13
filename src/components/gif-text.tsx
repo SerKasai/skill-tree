@@ -23,7 +23,7 @@ interface GifTextProps {
 }
 
 const GifText = ({
-  text = "IL MIO SKILL TREE",
+  text = "SERGIO IGNIZIO - MY SKILLS",
   gif = "https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExMjA3MnA1d2ZnczR1NWlhMmw3eXV4Zm4wYml5cWYyeHJxZGV6ZHQybyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/tr0SSHnAL0KL9fotmn/giphy.gif",
   className = "text-shadow-[0_0_20px_#00e7ff] text-8xl",
   containerClassName,
