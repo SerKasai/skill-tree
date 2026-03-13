@@ -26,7 +26,7 @@ function App() {
     <BubbleBackground>
       <div className="app-container w-screen min-h-screen drop-shadow-2xl">
         <div className="flex flex-col items-center justify-center p-10">
-          <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_3px_#00e7ff] text-4xl md:text-8xl">
+          <h2 className="font-extrabold select-none text-center uppercase transition-colors duration-300 text-transparent bg-clip-text bg-cover bg-center bg-no-repeat text-shadow-[0_0_0_#00e7ff] text-4xl md:text-8xl">
             SERGIO IGNIZIO <hr /> MY SKILLS
           </h2>
         </div>
