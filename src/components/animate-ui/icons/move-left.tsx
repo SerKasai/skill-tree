@@ -1,14 +1,13 @@
-'use client';
+"use client";
 
-import * as React from 'react';
-import { motion, type Variants } from 'motion/react';
+import { motion, type Variants } from "motion/react";
 
 import {
   getVariants,
   useAnimateIconContext,
   IconWrapper,
   type IconProps,
-} from '@/components/animate-ui/icons/icon';
+} from "../../../components/animate-ui/icons/icon";
 
 type MoveLeftProps = IconProps<keyof typeof animations>;
 
@@ -17,25 +16,25 @@ const animations = {
     group1: {
       initial: {
         x: 0,
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
       animate: {
-        x: '-15%',
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        x: "-15%",
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
     },
     group2: {},
     path1: {},
     path2: {},
   } satisfies Record<string, Variants>,
-  'default-loop': {
+  "default-loop": {
     group1: {
       initial: {
         x: 0,
       },
       animate: {
-        x: [0, '-15%', 0],
-        transition: { ease: 'easeInOut', duration: 0.6 },
+        x: [0, "-15%", 0],
+        transition: { ease: "easeInOut", duration: 0.6 },
       },
     },
     group2: {},
@@ -47,44 +46,44 @@ const animations = {
     group2: {},
     path1: {
       initial: {
-        d: 'M2 12H22',
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        d: "M2 12H22",
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
       animate: {
-        d: 'M12 12H22',
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        d: "M12 12H22",
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
     },
     path2: {
       initial: {
-        d: 'M6 8L2 12L6 16',
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        d: "M6 8L2 12L6 16",
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
       animate: {
-        d: 'M15 8L11 12L15 16',
-        transition: { ease: 'easeInOut', duration: 0.3 },
+        d: "M15 8L11 12L15 16",
+        transition: { ease: "easeInOut", duration: 0.3 },
       },
     },
   } satisfies Record<string, Variants>,
-  'pointing-loop': {
+  "pointing-loop": {
     group1: {},
     group2: {},
     path1: {
       initial: {
-        d: 'M2 12H22',
+        d: "M2 12H22",
       },
       animate: {
-        d: ['M2 12H22', 'M12 12H22', 'M2 12H22'],
-        transition: { ease: 'easeInOut', duration: 0.6 },
+        d: ["M2 12H22", "M12 12H22", "M2 12H22"],
+        transition: { ease: "easeInOut", duration: 0.6 },
       },
     },
     path2: {
       initial: {
-        d: 'M6 8L2 12L6 16',
+        d: "M6 8L2 12L6 16",
       },
       animate: {
-        d: ['M6 8L2 12L6 16', 'M15 8L11 12L15 16', 'M6 8L2 12L6 16'],
-        transition: { ease: 'easeInOut', duration: 0.6 },
+        d: ["M6 8L2 12L6 16", "M15 8L11 12L15 16", "M6 8L2 12L6 16"],
+        transition: { ease: "easeInOut", duration: 0.6 },
       },
     },
   } satisfies Record<string, Variants>,
@@ -95,11 +94,11 @@ const animations = {
         x: 0,
       },
       animate: {
-        x: [0, '-150%', '150%', 0],
+        x: [0, "-150%", "150%", 0],
         transition: {
-          default: { ease: 'easeInOut', duration: 0.6 },
+          default: { ease: "easeInOut", duration: 0.6 },
           x: {
-            ease: 'easeInOut',
+            ease: "easeInOut",
             duration: 0.6,
             times: [0, 0.5, 0.5, 1],
           },
