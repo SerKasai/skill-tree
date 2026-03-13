@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "tailwindcss";
-import { arraySkill } from "./components/Skills/Skills";
+import { arraySkill, type Skill } from "./components/Skills/Skills";
 import { BubbleBackground } from "./components/animate-ui/components/backgrounds/bubble";
 import { TextShimmer } from "./components/text-shimmer";
 import { SideBarDetails } from "./components/SideBarDetails/SideBarDetails";
@@ -36,7 +36,7 @@ function App() {
         <div className="skills-container flex md:grid flex-col-reverse md:grid-cols-2 bg-[#00000038] w-[360px] md:min-w-[750px] place-self-center justify-center items-center border-4 border-black border-double rounded-[50px]">
           <ul className="p-5 flex flex-col gap-y-5 h-full justify-center">
             {/* 5. METODO MAP: Perfetto l'utilizzo per renderizzare array dinamici */}
-            {arraySkill.map((skill) => {
+            {arraySkill.map((skill: Skill) => {
               // Memorizziamo il controllo in una variabile per rendere il codice più leggibile
               const isActive = activeSkillId === skill.id;
 
