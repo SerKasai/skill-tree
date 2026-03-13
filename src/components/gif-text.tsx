@@ -33,6 +33,7 @@ const GifText = ({
   useEffect(() => {
     if (!gif) return;
 
+    // eslint-disable-next-line react-hooks/set-state-in-effect
     setLoading(true);
     const img = new Image();
     img.src = gif;

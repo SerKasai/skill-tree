@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { arraySkill, type Skill } from "../Skills/skills"; // Importiamo anche il tipo Skill
+import { arraySkill, type Skill } from "../Skills/Skills"; // Importiamo anche il tipo Skill
 import { GlassMorphCard } from "../glass-morph-card";
 import { Icon } from "@iconify-icon/react";
 import "animate.css";
@@ -56,6 +56,7 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
     if (mql.addEventListener) {
       mql.addEventListener("change", handler);
     } else {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
       // @ts-ignore
       mql.addListener(handler);
     }
@@ -63,6 +64,7 @@ export function SideBarDetails({ activeSkillId }: SideBarDetailsProps) {
       if (mql.removeEventListener) {
         mql.removeEventListener("change", handler);
       } else {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
         // @ts-ignore
         mql.removeListener(handler);
       }

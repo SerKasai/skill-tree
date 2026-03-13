@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import "tailwindcss";
-import { arraySkill } from "./components/Skills/skills";
+import { arraySkill } from "./components/Skills/Skills";
 import { BubbleBackground } from "./components/animate-ui/components/backgrounds/bubble";
 import { TextShimmer } from "./components/text-shimmer";
 import { SideBarDetails } from "./components/SideBarDetails/SideBarDetails";
