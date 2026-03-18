@@ -19,9 +19,6 @@ function App() {
     setActiveSkillId((prevId) => (prevId === id ? null : id));
   };
 
-  // 3. FRAGMENT RIMOSSO: Prima avevi un <> </> che avvolgeva <BubbleBackground>.
-  // Dal momento che <BubbleBackground> è già un singolo elemento genitore,
-  // il Fragment esterno era ridondante e l'ho rimosso per tenere il DOM più pulito.
   return (
     <BubbleBackground>
       <div className="app-container w-screen min-h-screen drop-shadow-2xl">
